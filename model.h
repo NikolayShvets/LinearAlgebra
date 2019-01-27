@@ -14,7 +14,7 @@ public:
 	long double test_nu = 0;
 	std::ofstream test_file_wn;
 	long double T = 0;
-	TModel(): SamplingIncrement(1e-1), t0(0.0), t1(3.0), N(0.1){};
+    TModel(): SamplingIncrement(1e-1), t0(0.), t1(90.), N(0.1){};
 	/* абстрактная перегружаемая функция правых частей ДУ
 	* X - вектор состояния, t - независимый аргумент
 	* */
@@ -29,5 +29,5 @@ public:
 	virtual void clearResult();
 	virtual void prepareResult();
 	////////////////////////////////////////////
-	virtual void do_thing(const TVector& X, long double t) = 0;
+    //virtual void do_thing(const TVector& X, long double t) = 0;
 };

@@ -7,7 +7,7 @@ void TModel::addResult(const TVector& X, long double t)
 	 * строки, если да, увеличиваем количество 
 	 * строк на 1
 	 * */
-	 if (N == Result.rowCount())
+     if (N == Result.rowCount())
 		Result.resize(N+1, getOrder()+1);
 	/* поместим резудьтаты в последнюю строку матрицы Result
 	  * момент времени помещается в 0-ой столбец,
@@ -32,6 +32,6 @@ void TModel::prepareResult()
 	 * и соотвествующих этим значениям моменты времени на
 	 * интервале [t0, t1] с шагом SamplingIncrement
 	 * */
-	 Result.resize((int)((t1-t0)/SamplingIncrement)+1, /*getOrder()+1*/(int)((t1-t0)/SamplingIncrement)+1);
+     Result.resize((int)((t1-t0)/SamplingIncrement)+1, getOrder()+1/*(int)((t1-t0)/SamplingIncrement)+1*/);
 	 N = 0;
 }

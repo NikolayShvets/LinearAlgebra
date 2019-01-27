@@ -53,16 +53,16 @@ public:
 	//получение моудля вектора
 	double length() const;
 	//функция нормирования вектора
-	TVector& norm();
+    TVector& norm();
 	/*поворот вектора вокруг заданной оси на заданный угол
 	 * при помощи формулы Родрига
 	 * */
-	TVector RodrigRotate(double phi, const TVector& axis) const;
+    TVector RodrigRotate(double phi, const TVector& axis) const;
 	/*поворот вектора вокруг заданной оси на заданный
 	* угол при помощи кватерниона*/
-	TVector rotate(double phi, const TVector& axis)const;
+    TVector rotate(double phi, const TVector& axis)const;
 	/*поворот вектора при помощи заданного кватерниона*/
-	TVector QuaternionRotate(const TQuaternion& L)const;
+    TVector QuaternionRotate(const TQuaternion& L)const;
 };
 
 class TMatrix
@@ -72,8 +72,9 @@ protected:
 	//int n, m;
 	//элементы матрицы
 	double** data;
+    int n, m;
 public:
-int n, m;
+
 	//конструктор по умолчанию
 	TMatrix();
 	//конструктор с заданием размерности
@@ -170,6 +171,6 @@ public:
 	/* производящая функция для создания кватерниона
 	 * по углам Крылова
 	 * */
-	 static TQuaternion fromKrylovAngels(double yaw, double pith, double roll);
+     static TQuaternion fromKrylovAngels(double yaw, double pith, double roll);
 };
 }

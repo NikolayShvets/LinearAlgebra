@@ -5,7 +5,6 @@
 #include <string>
 #include <chrono>
 #include <math.h>
-//#include <fstream>
 
 
 class white_noise

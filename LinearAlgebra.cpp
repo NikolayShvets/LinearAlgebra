@@ -18,7 +18,7 @@ namespace LinearAlgebra
 	{
 		(*this) = rvalue;
 	}
-	//лператор присваивания
+    //oператор присваивания
 	TVector& TVector::operator = (const TVector& rvalue)
 	{
 		//если левый опренд не есть правый
@@ -38,7 +38,7 @@ namespace LinearAlgebra
 			memcpy(data, rvalue.data, sizeof(double)*n); //как в паскалеке
 		}
 		//возвращаем ссылку на левый операнд для возможности цепочки присваиваний
-		return *this;
+		return (*this);
 	}
 	//деструктор
 	TVector::~TVector()
@@ -151,7 +151,7 @@ namespace LinearAlgebra
 	}
 	
 	//оператор умножения вектора на кватернион
-	TQuaternion TVector::operator *(const TQuaternion& arg)const
+    TQuaternion TVector::operator *(const TQuaternion& arg)const
 	{
 		
 	}
@@ -184,7 +184,7 @@ namespace LinearAlgebra
 		
 	}
 	// кватериноном
-	// еще кватериноном
+    // еще кватериноном
 	//матрицы
 	//конструктор по умолчанию
 	TMatrix::TMatrix():n(0),m(0),data(NULL){}
@@ -209,7 +209,7 @@ namespace LinearAlgebra
 			//выделяем память по размеру rvalue
 			resize(rvalue.n, rvalue.m);
 			//построчный перенос данных из правого операнда в левый
-			for (int i = 0; i < m; i++)
+            for (int i = 0; i < n; i++)
 				memcpy(data[i],rvalue.data[i],sizeof(double)*m);
 		}
 		return (*this);
@@ -319,14 +319,14 @@ namespace LinearAlgebra
 		return M;
 	}
 	//умножение матрицы на число
-	TMatrix TMatrix::operator *(double arg)
+    TMatrix TMatrix::operator *(double arg)
 	{
 		TMatrix M(n,m);
 		for(int i = 0; i < n; i++)
 			for(int j = 0; j < m; j++)
 				M(i,j) = data[i][j] * arg;
 		return M;
-	}
+    }
 	//умножение матрицы на матрицу
 	TMatrix TMatrix::operator *(const TMatrix& arg)const
 	{
@@ -420,7 +420,7 @@ namespace LinearAlgebra
 		return *this;
 	}
 	
-	double TMatrix::det() const
+    double TMatrix::det() const
 	{
 		int i,j;
         double det = 0;

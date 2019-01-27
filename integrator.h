@@ -3,7 +3,6 @@
 #include "model.h"
 #include "WN.h"
 
-//using namespace LinearAlgebra;
 class TModel;
 
 class TIntegrator

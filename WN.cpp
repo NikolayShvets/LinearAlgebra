@@ -35,7 +35,7 @@ std::vector<std::string> split(const std::string &s, char delim)
 long double white_noise::get_nu(long double time)
 {
 	
-	ifstream WNFile("/home/nikonikoni/Документы/clprojects/oprs/LAB_2/lab__2/WhiteNoise/Debug/WNFile.txt");
+    ifstream WNFile("/home/nikonikoni/LinearAlgebra/WNFile.txt");//"/home/nikonikoni/Документы/clprojects/oprs/LAB_2/lab__2/WhiteNoise/Debug/WNFile.txt");
 	string str;
 	getline(WNFile, str);
 	vector<string> nu_time = split(str, '|');

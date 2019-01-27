@@ -79,14 +79,6 @@ void TRealPhisPendulumTS::getRight(const TVector& X, long double t, TVector& Y)
 	Y.resize(2);
 	Y[0] = X[1];
 	Y[1] = (-k*X[0] - sgn(X[1])*mu*g*m)/m;
-	//if(X[1] < 0)
-	//	Y[1] = (-k*X[0] + mu*g*m)/m;
-	//else
-	//	Y[1] = (-k*X[0] - mu*g*m)/m;
-	//-param[1]/param[0]*X.get(0)-0.14715*Math.signum(X.get(1));
-	
-	//cout<<mu<<"|"<<k<<"|"<<g<<"|"<<m<<"|"<<endl;
-	//cout<<sgn(X[1])<<endl;
 }
 
 
@@ -145,39 +137,6 @@ long double TLinearizeModel::func_2(long double arg)
 	else temp = 0.0;
 	return temp;
 	
-	/*derivat = arg - argprev;
-	cout<<sgn(derivat)<<endl;
-	if((arg > z_2/2.+s_2) && (derivat > 0.0))
-		temp = s_2;
-	else if ((arg < z_2/2.-s_2) && (derivat > 0.0))
-		temp = -s_2;
-	else if ((arg >= z_2/2.-s_2)&&(arg <= s_2+z_2/2.)&& (derivat > 0.0))
-		temp = (arg - z_2/2.);
-	else if ((arg > s_2-z_2/2.) && (derivat < 0.0))
-		temp = s_2;
-	else if ((arg < -s_2-z_2/2.) && (derivat < 0.0))
-		temp = -s_2;
-	else if ((arg >=-s_2-z_2/2.) && (arg <= s_2-z_2/2.) && (derivat < 0.0))
-		temp = (arg + z_2/2.);
-	//else temp = 0.0;
-	//cout<<temp<<endl;
-	return temp;*/
-	
-	/*derivat = arg - argprev; 
-	if((arg > z_2/2.+s_2) && (derivat < 0.0))
-		temp = s_2;
-	else if ((arg < z_2/2.-s_2) && (derivat < 0.0))
-		temp = -s_2;
-	else if ((arg >= z_2/2.-s_2)&&(arg <= s_2+z_2/2.)&& (derivat < 0.0))
-		temp = arg - z_2/2.;
-	else if ((arg > s_2-z_2/2.) && (derivat > 0.0))
-		temp = s_2;
-	else if ((arg < -s_2-z_2/2.) && (derivat > 0.0))
-		temp = -s_2;
-	else if ((arg >=-s_2-z_2/2.) && (arg <= s_2-z_2/2.) && (derivat > 0.0))
-		temp = arg + z_2/2.;
-	//else temp = 0;
-	return temp;*/
 }
 long double TLinearizeModel::calc_f1(int c, long double arg)
 {
